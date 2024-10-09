@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        console.log('Задача 1 --- 15 мин');
+        const num = +(prompt('введите целое число'));
+        const fu = (num) => {
+            let ost = num % 100;
+            if (ost>=20) {
+                ost = num % 10;
+            }
+            console.log(ost);
+            if (ost === 1) {
+                console.log(`${num} компьютер`);
+            } else 
+            if ((ost >= 2)&&(ost <= 4)) {
+                console.log(`${num} компьютера`);
+            } else
+            if ((ost >= 5)&&(ost <= 19) || (ost == 0)) {
+                console.log(`${num} компьютеров`); 
+            }
+        }
+        fu(num);
+
+        console.log('Задача 2 - 25мин');
+        const array = [27, 81, 18];
+        let min = Math.min(...array);
+
+        const rezult = [];
+        for (let y = 2; y <= min; y++) {
+            if (array.every(number => number % y === 0)) {
+                rezult.push(y);
+            }
+        }
+        console.log(`Масссив на входе: [${array}], общие делители: ${rezult} `)
+        
+
+        console.log('Задача 3 - 15мин');
+        let minNumber = +(prompt('введите минимальное число'));
+        let maxNumber = +(prompt('введите максимальное число'));
+        const array3 = [];
+        const proverca = (num) => {
+            if (num <= 1) return false;
+            for (let i = 2; i < num; i++) {
+                if ((num % i == 0) && (num != i)) {
+                    return false
+                } 
+            }return true
+        }
+
+        for (let i = minNumber; i <= maxNumber; i++) {
+            if (proverca(i)) {
+                array3.push(i)
+            } 
+            
+        }
+        console.log(array3);
+
+        console.log('Задача 4');
+        const numberMatrix = 5;
+        const rows = numberMatrix;
+        const cols = numberMatrix;
+        let matrix = [];
+
+        for (let i = 0; i < rows; i++) {
+            matrix[i] = [];
+            for (let j = 0; j < cols; j++) {
+           
+             matrix[i][j] = (i+1) * (j+1);
+               
+            }
+            
+        }
+        console.log(matrix);
+         
+
+    </script>
+</body>
+</html>
